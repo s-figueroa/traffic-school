@@ -148,7 +148,7 @@ let buttonLeft: Sprite = null
 let buttonRight: Sprite = null
 let buttonB: Sprite = null
 let buttonA: Sprite = null
-let carSpeed = Math.percentChance(50)
+let carSpeed = 10
 tiles.setTilemap(tilemap`level1`)
 scene.centerCameraAt(96, 80)
 buttonA = sprites.create(img`
@@ -248,8 +248,8 @@ game.onUpdateInterval(2000, function () {
             . . . . . e 2 2 2 2 2 2 e . . . 
             `, SpriteKind.Car)
         tiles.placeOnRandomTile(theCar, assets.tile`myTile1`)
-        sprites.setDataBoolean(theCar, "movingDown", true)
         theCar.vy = carSpeed
+        sprites.setDataBoolean(theCar, "movingDown", true)
     } else {
         theCar = sprites.create(img`
             . . . . . . a a c c a a . . . . 
