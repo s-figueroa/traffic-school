@@ -297,7 +297,7 @@ game.onUpdateInterval(500, function () {
                 sprites.setDataBoolean(value, "blink", true)
             }
         }
-        if (value.vy == 0 && tiles.tileIsWall(value)) {
+        if (value.vy == 0 && tiles.tileIsWall(tiles.locationOfSprite(value))) {
             if (sprites.readDataBoolean(value, "movingDown")) {
                 value.vy = carSpeed
             } else {
